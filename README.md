@@ -17,3 +17,10 @@
 * Yarn is another package manager - like npm or bundler.
 
 > Installed yarn globally in past. run: ```yarn -v``` to check version.
+
+
+* Creating a rails app from chosen directory: ```rails new rails_app```
+
+* running a rails app: ```rails server```
+
+> After generating any scaffolds run rails db:migrate to update database schemas.
