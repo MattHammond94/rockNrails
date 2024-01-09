@@ -23,11 +23,18 @@
 
 * running a rails app: ```rails server``` or ```rails s```
 
-> After generating any scaffolds run ```rails db:migrate``` to update database schemas.
+> IMPORTANT - Rails will automatically include a git repo (This is great!) However if you're working from a repo that already has a git repo this will mean the new repo would be classed as a submodule. use```rm -fr .git``` from new project to remove git repo.
+
+> !!!! After generating any scaffolds run ```rails db:migrate``` to update database schemas. !!!!
 
 > rails console can be used by running ```rails c``` - Allows instantiating classes in an IRB ENV
 
 ### Generating scaffolds:
+
+Pages: 
+> ```rails g controller pages home about``` 
+
+
 
 >  !!! ```rails g scaffold``` !!!
 
@@ -43,6 +50,8 @@
 > By default all models come with timestamps. adding extra fields looks as below:
 
 ```rails g scaffold books title:string publication_year:integer```
+
+
 
 ### Routing:
 
