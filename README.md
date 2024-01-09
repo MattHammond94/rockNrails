@@ -21,9 +21,11 @@
 
 * Creating a rails app from chosen directory: ```rails new rails_app```
 
-* running a rails app: ```rails server```
+* running a rails app: ```rails server``` or ```rails s```
 
-> After generating any scaffolds run rails db:migrate to update database schemas.
+> After generating any scaffolds run ```rails db:migrate``` to update database schemas.
+
+> rails console can be used by running ```rails c``` - Allows instantiating classes in an IRB ENV
 
 ### Routing:
 
@@ -38,3 +40,14 @@
 ### Controllers:
 
 > 
+
+
+
+
+### Optional extras/gem files:
+
+> Devise - used for authentication: ```rails generate devise:insta``` - Follow added instructions in terminal on install.
+
+> Using devise to generate 
+
+> initializing rails app with tailwind or bootstrap from start:```rails new --css <APP NAME> --css tailwind```
