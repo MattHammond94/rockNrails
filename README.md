@@ -27,6 +27,23 @@
 
 > rails console can be used by running ```rails c``` - Allows instantiating classes in an IRB ENV
 
+### Generating scaffolds:
+
+>  !!! ```rails g scaffold``` !!!
+
+> running the above command followed by ```<OBJECT NAME>``` will generate:
+* An ```<OBJECT NAME>```Controller
+* An ```<OBJECT NAME>``` model
+* An ```resources :<OBJECT NAME>``` added to the routes.rb file
+* A set of view files in the views folder
+* A set of testing files for ```<OBJECT NAME>```
+
+> ```rails d scaffold <OBJECT NAME>``` : will destory all files just scaffolded.
+
+> By default all models come with timestamps. adding extra fields looks as below:
+
+```rails g scaffold books title:string publication_year:integer```
+
 ### Routing:
 
 > ```rails routes``` shows all current routes for application.
