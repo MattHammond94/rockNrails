@@ -24,3 +24,17 @@
 * running a rails app: ```rails server```
 
 > After generating any scaffolds run rails db:migrate to update database schemas.
+
+### Routing:
+
+> ```rails routes``` shows all current routes for application.
+
+> ```resources:example``` within the routes.rb file will generate all 7 default REST api routes for 'example'
+
+> Can use : ```resources :posts, only: [:index, :show]``` or ```resources :users, except: [:index]``` to specify specfic routes for certain models. 
+
+> ```get '/somepath', to: 'somecontroller#someaction'``` specifies a custom path (non-RESTful)
+
+### Controllers:
+
+> 
