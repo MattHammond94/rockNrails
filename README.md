@@ -38,6 +38,10 @@
 
 > Within seeds.rb in the config dir can add logic like ```10.times { Post.create(title: "Post title") }``` to seed our database in the dev env. 
 
+> Migrations are used to editing a database schema/structure - This command is used to add a column to a table: ```rails g migration add_views_to_posts views:integer``` - Can also add a default value from within the new migration file before running the db:migrate command.
+
+> Using a migration to make a DB relational: ```rails g migration add_user_to_post user:belongs_to``` This creates a one Post to many Users DB relationship. - After running this command and migrating your DB schema you will need to ensure that both Models are updated accordingly. In the ```post Model```  You can add ```belongs_to :user``` and in the ```user Model``` you can add ```has_many :posts``` to confirm the DB relationship.
+
 
 ### Generating scaffolds:
 
@@ -71,6 +75,8 @@ Scaffolding for full design pattern:
 
 > The update and save methods are similar to the mongoose methods used in a MERN app controller (under the hood they are running SQL commands)
 
+> IF USING DEVISE FOR AUTH: Adding ```before_action :authenticate_user!``` at the top of a controller will protect all functions in this controller from being accessed without logging in. You can ensure that some are still accessible by adding ```before_action :authenticate_user!, except: %i[show index]```
+
 
 ### Models:
 
@@ -91,7 +97,11 @@ Scaffolding for full design pattern:
 
 > Partials will always starts with a underscore ```_navbar.html.erb``` and can be rendered into elements as so: ```<%= render 'layouts/navbar' %>```
 
-> button_to is similar to an onClick function in React. if deleting it takes two coma separated params as so: ```<%= button_to "Delete this post", @post, method: :delete %>``` the method: :delete signals the type of REQ being made. 
+> button_to is similar to an onClick function in React. if deleting it takes two coma separated params as so: ```<%= button_to "Delete this post", @post, method: :delete %>``` the method: :delete signals the type of REQ being made.
+
+> EASY TO REMEMBER - ```link_to``` for get routes - ```button_to``` for other REQ methods.
+
+> 
 
 ##### Routing:
 
@@ -117,8 +127,20 @@ Scaffolding for full design pattern:
 
 ### Optional extras/gem files:
 
-> Devise - used for authentication: ```rails generate devise:insta``` - Follow added instructions in terminal on install.
+* Devise:
 
-> Using devise to generate 
+> add ```gem 'devise'``` to bottom of gem file and run ```bundle install```
+
+> Used for authentication: ```rails generate devise:install``` - Follow added instructions in terminal on install.
+
+> Using devise to generate a scaffold: ```rails g devise User``` - Generates MVC for User objects. !!! MAKE SURE TO MIGRATE DB AFTER!!! You will notice in the routes.rb file that the :users endpoints are protected by a ```devise_for```
+
+> NOTE: after scaffolding using devise the view files are not visible in the views dir. run ```rails g devise:views``` to generate the view files for exisiting devise files.
+
+* Tailwind 
 
 > initializing rails app with tailwind or bootstrap from start:```rails new --css <APP NAME> --css tailwind```
+
+* Bootstrap 
+
+> An easier approach with bootstrap than generating a new rails app with bootstrap from the get go is to add the bootstrap JS bundle and stylesheet link to the head inside of the application.html.erb entry point.
