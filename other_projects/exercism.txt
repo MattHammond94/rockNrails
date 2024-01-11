@@ -1,1 +1,12 @@
 I have spent the whole of today working through the Ruby exercism track. 
+
+This can be viewed in my exercism account however I would like to evidence todays work with a commit.
+
+This is the commit. 
+
+INFACT! Going forward, upon completion of an online resource that utlilses its own repo/workspace 
+I'll be adding a .txt file so my efforts translate to a commit. 
+
+All about those green squares baby!!!!
+
+Ruby Exercism track - 
