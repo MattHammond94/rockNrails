@@ -1,0 +1,1 @@
+I have spent the whole of today working through the Ruby exercism track. 
