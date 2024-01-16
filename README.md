@@ -137,6 +137,10 @@ Scaffolding for full design pattern:
 
 > NOTE: after scaffolding using devise the view files are not visible in the views dir. run ```rails g devise:views``` to generate the view files for exisiting devise files.
 
+> Can also generate the controllers for this class: ```rails g deivse::controller users``` - after generating controllers for said class you will need to add these controllers to the routes.rb file after the devise_for :users like so: ```controllers: { sessions: 'users/sessions' }```
+
+> Within the controller files the methods are pre generated but commented out. You can uncomment the required methods as well as the before actions at the top of the file where applicable.
+
 * Tailwind 
 
 > initializing rails app with tailwind or bootstrap from start:```rails new --css <APP NAME> --css tailwind```
